@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+// calculatio d'un loi mathematique 
 int main ( ){
        float  perimater , larg , lon, surface ;
     printf("give the larger and the langer of the rectangle : \n");

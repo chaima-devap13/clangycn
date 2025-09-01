@@ -11,3 +11,4 @@ int main ()
   printf("f= %d",f);
   return 0;  
 }
+// factorial number

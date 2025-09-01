@@ -1,0 +1,26 @@
+Algorithme exo_factoriel_pointeur
+  variable
+    n:entier;
+    p:^entier;
+  fonction fact(e:^entier)
+       variable
+        f,i:entier;
+        debut
+           f <--1;
+            pour i <-- 2 à ^e faire 
+               f <-- f*i;  
+            finpour;
+           retourner f;
+        fin;
+   debut
+      
+      ecrire('donner un nombre');
+      lire(n);
+      p=NULL;
+      allouer(p);
+      p=@n;
+      fact(p);
+      retourner 0 ;
+    fin.  
+            
+  

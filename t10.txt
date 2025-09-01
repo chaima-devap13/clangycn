@@ -1,0 +1,93 @@
+Algorythme exo_01_etudiant
+  type etudiant = enregistrement;
+   id,age : entier;
+   nom,prenom : chain[25];
+   moy : réel;
+  fin;
+  variable t:tableau[1..100]de etudiant
+            n,choix:entier;
+            rep:caractere;
+  procedure letud(var e:entier)
+   debut
+     lire(e.nom);
+     lire(e.prenom);
+     repeter
+       lire(e.age)
+     jusqu'à (e.age <=16 et e.age>=70)
+     repeter
+       lire(e.moy)
+     jusqu'à (e.moy<=0 e e.moy>=20)
+    fin;
+  procedure ltab (var t:tableau[1..100]de etudiant;n:entier)
+    variable
+      i:entier;
+    debut
+      pour i <--1 à n faire
+        letud(t[i]);
+        t[i].id <-- i; 
+      finpour;
+    fin;
+  procedure ecetud (var e:entier)
+    debut
+      ecrire(e.nom);
+      ecrire(e.prenom);
+      ecrire(e.id);
+      ecrire(e.age);
+      ecrire(e.moy);
+       si ( e.moy >= 10) alore 
+         ecrire('ADM');
+        sinon 
+          ecrire('AJN');
+    fin;
+  procedure affetud ( vat t:tableau[1..100]de etudiant;n:entier)
+    variable 
+      i:entier;
+    debut
+      pour i <-- 1 à n faire
+        ecetud(t[i]);
+    fin;
+  fonction moyetud(t:tableau[1.100]de etudiant ; n:entier)
+    variable 
+      i:entier;
+      som,mg:réel;
+    debut 
+      som <-- 0;
+      pour i <--1 à n faire 
+        som <-- som+t[i].moy;
+      finpour;
+      mg=som/n;
+      retourner mg;
+    fin;
+  procedure emenue()
+    debut
+      ecrire('menu principal');
+      ecrire('1:remplissage') ;
+      ecrire('2:affichage des informations');
+      ecrire('3:moyenne gnerale des etudiants');
+      ecrire('donner votre choix');
+    fin;
+  debut 
+      lire(n);
+      rep <-- 'o';
+      tanque(rep='o' ou 'O')
+        emenue();
+        lire(choix);
+          si (choix = 1) alore 
+             letud(t,n);
+          sinon si (choix =2) alore
+             affetud(t,n);
+          sinon si (choix =3) alore
+            ecrire(moyetud(t,n));
+          sinon
+            ecrire('choix incorrect');
+              finsi;
+            finsi
+          finsi;
+          ecrire('voulez vous continuez O/N :');
+          lire(rep);
+      fintanque;
+  fin.    
+  
+
+                
+                                                   

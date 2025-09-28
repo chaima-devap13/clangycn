@@ -1,6 +1,0 @@
-Algorithme list_ch;
-  type p=^element
-  element = enregistrement
-   info:type_c;
-   suiv:^element;
-  fin; 
